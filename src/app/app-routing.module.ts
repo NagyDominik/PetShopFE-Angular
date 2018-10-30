@@ -1,10 +1,24 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import {RouterModule, Routes} from '@angular/router';
+import {WelcomeComponent} from './welcome/welcome.component';
+import {PetsListComponent} from './pets/pets-list/pets-list.component';
+import { PetDetailComponent } from './pets/pet-detail/pet-detail.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: 'pets', component: PetsListComponent },
+  { path: 'pets/:id', component: PetDetailComponent },
+  { path: '', component: WelcomeComponent }
+];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [
+    CommonModule,
+    RouterModule.forRoot(routes)
+  ],
+  exports: [
+    RouterModule
+  ],
+  declarations: []
 })
 export class AppRoutingModule { }
