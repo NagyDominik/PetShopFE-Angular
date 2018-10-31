@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Pet, Types } from 'src/app/shared/models/pet';
+import { Pet } from 'src/app/shared/models/pet';
 import { PetService } from 'src/app/shared/services/pet.service';
 
 @Component({
