@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Pet } from 'src/app/shared/models/pet';
 import { PetService } from 'src/app/shared/services/pet.service';
+import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 
 @Component({
   selector: 'app-pets-list',
@@ -14,12 +15,17 @@ export class PetsListComponent implements OnInit {
   constructor(private petService: PetService) { }
 
   ngOnInit() {
-    this.pets = this.petService.getAll();
+    this.refresh();
   }
 
-  selectedPet: Pet;
-  onSelect(pet: Pet): void {
-    this.selectedPet = pet;
+  refresh() {
+    this.petService.getAll().subscribe(list => { this.pets = list });
+  }
+
+  delete(id: number) {
+    this.petService.deletePet(id).subscribe(message => {console.log(message)});
+    this.refresh();
+    //this.pets = this.petService.getAll();
   }
 
 }

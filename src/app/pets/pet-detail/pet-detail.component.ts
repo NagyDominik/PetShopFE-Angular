@@ -15,7 +15,9 @@ export class PetDetailComponent implements OnInit {
 
   ngOnInit() {
     let id = +this.route.snapshot.paramMap.get('id');
-    this.pet = this.petService.getPetByID(id);
+    this.petService.getPetByID(id).subscribe(p => {
+      this.pet = p;
+    });
   }
 
 }

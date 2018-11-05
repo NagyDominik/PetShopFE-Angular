@@ -1,5 +1,11 @@
-<ul class="pets">
-  <li *ngFor="let pet of pets" (click)="onSelect(pet)" routerLink="/pets/{{pet.ID}}">
-    <span class="badge">{{pet.ID}}</span> {{pet.Name}}
+<ul class="pets" *ngIf="pets">
+  <div *ngFor="let pet of pets">
+  <li routerLink="/pets/{{pet.id}}" class="pull-left">
+    <span class="badge">{{pet.id}}</span> {{pet.name}}
   </li>
+  <button class="update" routerLink="/pet-update/{{pet.id}}">Update</button>
+  <button class="delete" (click)="delete(pet.id)">Delete</button>
+</div>
 </ul>
+<h3 *ngIf="!pets">Loading...</h3>
+<button routerLink="/pet-add">Add Pet</button>

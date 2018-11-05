@@ -8,6 +8,9 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule} from '@angular/forms';
 import { PetDetailComponent } from './pets/pet-detail/pet-detail.component';
+import { PetAddComponent } from './pets/pet-add/pet-add.component';
+import { PetUpdateComponent } from './pets/pet-update/pet-update.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,11 +19,14 @@ import { PetDetailComponent } from './pets/pet-detail/pet-detail.component';
     NavbarComponent,
     WelcomeComponent,
     PetDetailComponent,
+    PetAddComponent,
+    PetUpdateComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
