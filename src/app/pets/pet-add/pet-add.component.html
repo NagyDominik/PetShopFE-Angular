@@ -1,42 +1,42 @@
 <form [formGroup]="petForm" (ngSubmit)="save()">
-  
-  <label>
-    Name:
-    <input type="text" formControlName="Name">
-  </label>
-<br>
-<br>
-  <label>
-    Type:
-    <input type="text" formControlName="Type">
-  </label>
-<br>
-<br>
-  <label>
-    Birth date:
-    <input type="date" formControlName="Birthdate">
-  </label>
-<br>
-<br>
-  <label>
-    Sold date:
-    <input type="date" formControlName="SoldDate">
-  </label>
-<br>
-<br>
-  <label>
-    Color:
-    <input type="text" formControlName="Color">
-  </label>
-<br>
-<br>
-  <label>
-    Price:
-    <input type="number" formControlName="Price">
-  </label>
-<br>
-<br>
-<button type="submit">Save</button>
+  <div class="row">
+    <div class="input-field col s3">
+      <label for="name">Name</label>
+      <input id="name" type="text" class="validate" formControlName="Name">
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s3">
+      <label for="type">Type</label>
+      <input id="type" type="text" class="validate" formControlName="Type">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col s3">
+      <label>Birth date</label>
+      <input type="date" formControlName="Birthdate">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col s3">
+      <label>Sold date</label>
+      <input type="date" formControlName="SoldDate">
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s3">
+      <label for="color">Color</label>
+      <input id="color" type="text" class="validate" formControlName="Color">
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s3">
+      <label for="price">Price</label>
+      <input id="price" type="text" class="validate" formControlName="Price">
+    </div>
+  </div>
+
+  <button type="submit">Save</button>
 
 </form>
 <button routerLink="/pets">Back</button>

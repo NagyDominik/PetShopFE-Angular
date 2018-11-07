@@ -26,8 +26,9 @@ export class PetAddComponent implements OnInit {
 
   save() {
     const pet = this.petForm.value;
-    this.petService.addPet(pet);
-    this.router.navigateByUrl('/pets');
+    this.petService.addPet(pet).subscribe(p => {
+      this.router.navigateByUrl('/pets');
+    });
   }
 
 }

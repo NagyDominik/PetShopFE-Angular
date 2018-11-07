@@ -1,11 +1,22 @@
-<ul class="pets" *ngIf="pets">
+<button class="waves-effect btn-floating waves-light add" routerLink="/pet-add">+</button>
+
+<ul class="pets" *ngIf="!pets">
   <div *ngFor="let pet of pets">
   <li routerLink="/pets/{{pet.id}}" class="pull-left">
-    <span class="badge">{{pet.id}}</span> {{pet.name}}
+    <span class="badge">{{pet.id}}</span> <span> {{pet.name}}</span>
   </li>
   <button class="update" routerLink="/pet-update/{{pet.id}}">Update</button>
   <button class="delete" (click)="delete(pet.id)">Delete</button>
 </div>
 </ul>
-<h3 *ngIf="!pets">Loading...</h3>
-<button routerLink="/pet-add">Add Pet</button>
+<div class="preloader-wrapper active loading big" *ngIf="pets">
+  <div class="spinner-layer spinner-blue-only">
+    <div class="circle-clipper left">
+      <div class="circle"></div>
+    </div><div class="gap-patch">
+      <div class="circle"></div>
+    </div><div class="circle-clipper right">
+      <div class="circle"></div>
+    </div>
+  </div>
+</div>

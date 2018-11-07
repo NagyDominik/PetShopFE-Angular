@@ -1,0 +1,42 @@
+<form [formGroup]="petForm" (ngSubmit)="save()">
+  
+  <label>
+    First Name:
+    <input type="text" formControlName="firstName">
+  </label>
+<br>
+<br>
+  <label>
+    Last Name:
+    <input type="text" formControlName="lastName">
+  </label>
+<br>
+<br>
+  <label>
+    Birth date:
+    <input type="date" formControlName="Birthdate">
+  </label>
+<br>
+<br>
+  <label>
+    Sold date:
+    <input type="date" formControlName="SoldDate">
+  </label>
+<br>
+<br>
+  <label>
+    Color:
+    <input type="text" formControlName="Color">
+  </label>
+<br>
+<br>
+  <label>
+    Price:
+    <input type="number" formControlName="Price">
+  </label>
+<br>
+<br>
+<button type="submit">Save</button>
+
+</form>
+<button routerLink="/pets">Back</button>

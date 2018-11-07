@@ -1,0 +1,11 @@
+<ul class="owners" *ngIf="owners">
+  <div *ngFor="let owner of owners">
+  <li routerLink="/owners/{{owner.id}}" class="pull-left">
+    <span class="badge">{{owner.id}}</span> {{owner.firstName}} + "  " + {{owner.lastName}}
+  </li>
+  <button class="update" routerLink="/owner-update/{{owner.id}}">Update</button>
+  <button class="delete" (click)="delete(owner.id)">Delete</button>
+</div>
+</ul>
+<h3 *ngIf="!owners">Loading...</h3>
+<button routerLink="/owner-add">Add Owner</button>

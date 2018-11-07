@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { PetsListComponent } from './pets/pets-list/pets-list.component';
@@ -11,6 +12,10 @@ import { PetDetailComponent } from './pets/pet-detail/pet-detail.component';
 import { PetAddComponent } from './pets/pet-add/pet-add.component';
 import { PetUpdateComponent } from './pets/pet-update/pet-update.component';
 import { HttpClientModule } from '@angular/common/http';
+import { OwnerAddComponent } from './owners/owner-add/owner-add.component';
+import { OwnerDetailComponent } from './owners/owner-detail/owner-detail.component';
+import { OwnerUpdateComponent } from './owners/owner-update/owner-update.component';
+import { OwnersListComponent } from './owners/owners-list/owners-list.component';
 
 @NgModule({
   declarations: [
@@ -21,9 +26,14 @@ import { HttpClientModule } from '@angular/common/http';
     PetDetailComponent,
     PetAddComponent,
     PetUpdateComponent,
+    OwnerAddComponent,
+    OwnerDetailComponent,
+    OwnerUpdateComponent,
+    OwnersListComponent,
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,

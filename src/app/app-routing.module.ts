@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {RouterModule, Routes} from '@angular/router';
-import {WelcomeComponent} from './welcome/welcome.component';
-import {PetsListComponent} from './pets/pets-list/pets-list.component';
+import { RouterModule, Routes } from '@angular/router';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { PetsListComponent } from './pets/pets-list/pets-list.component';
 import { PetDetailComponent } from './pets/pet-detail/pet-detail.component';
 import { PetAddComponent } from './pets/pet-add/pet-add.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PetUpdateComponent } from './pets/pet-update/pet-update.component';
+import { MzButtonModule, MzInputModule, MzDatepickerModule } from 'ngx-materialize';
 
 const routes: Routes = [
   { path: 'pets', component: PetsListComponent },
@@ -20,7 +21,10 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forRoot(routes),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MzButtonModule,
+    MzInputModule,
+    MzDatepickerModule,
   ],
   exports: [
     RouterModule

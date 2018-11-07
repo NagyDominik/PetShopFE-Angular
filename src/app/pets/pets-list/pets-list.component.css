@@ -1,79 +1,10 @@
-.selected {
-    background-color: #CFD8DC !important;
-    color: white;
-}
-.pets {
-  margin: 0 0 2em 0;
-  list-style-type: none;
-  padding: 0;
-}
-.pets li {
-  display: inline-block;
-  cursor: pointer;
-  position: relative;
-  left: 0;
-  background-color: #EEE;
-  margin: .5em;
-  padding: .3em 0;
-  height: 1.6em;
-  border-radius: 4px;
-  padding-right: 7em;
-}
-.pets li.selected:hover {
-  background-color: #BBD8DC !important;
-  color: white;
-}
-.pets li:hover {
-  color: #607D8B;
-  background-color: #DDD;
-  left: .1em;
+.add {
+  margin: 10px 10px;
+  font-size: 24px;
 }
 
-.pets .badge {
-  display: inline-block;
-  font-size: small;
-  color: white;
-  padding: 0.8em 0.7em 0 0.7em;
-  background-color: #607D8B;
-  line-height: 1em;
-  position: relative;
-  left: -1px;
-  top: -4px;
-  height: 1.8em;
-  margin-right: .8em;
-  border-radius: 4px 0 0 4px;
-}
-
-.update {
+.loading {
   position: absolute;
-  margin-top: .7em;
-}
-
-.update:hover {
-  background-color: #008cba;
-}
-
-.delete {
-  position: absolute;
-  margin-top: .7em;
-  margin-left: 7em;
-}
-
-.delete:hover {
-  background-color: #f44336;
-}
-
-button {
-  cursor: pointer;
-  display: inline-block;
-  border-radius: 4px;
-  background-color: #333;
-  border: none;
-  font-size: 14px;
-  padding: 8px 20px;
-  color: #f2f2f2;
-}
-
-button:hover {
-  background-color: #4CAF50;
+  left: 50%;
+  top: 50%;
 }

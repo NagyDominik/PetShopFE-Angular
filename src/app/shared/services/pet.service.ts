@@ -31,9 +31,8 @@ export class PetService {
     return this.http.get<Pet>(this.apiURL + '/' + id);
   }
 
-  addPet(pet: Pet) {
-    pet.id = this.id++;
-    this.pets.push(pet);
+  addPet(pet: Pet): Observable<any> {
+    return this.http.post(this.apiURL, pet, {responseType: 'text'});
   }
 
   updatePet(pet: Pet): Observable<any> {
