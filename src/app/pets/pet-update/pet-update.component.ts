@@ -4,6 +4,7 @@ import { Pet } from 'src/app/shared/models/pet';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormControl } from '@angular/forms';
 import { DatePipe } from '@angular/common';
+import { MaterializeModule } from 'ngx-materialize';
 
 @Component({
   selector: 'app-pet-update',

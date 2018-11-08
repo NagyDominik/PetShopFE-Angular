@@ -1,11 +1,35 @@
-<ul class="owners" *ngIf="owners">
-  <div *ngFor="let owner of owners">
-  <li routerLink="/owners/{{owner.id}}" class="pull-left">
-    <span class="badge">{{owner.id}}</span> {{owner.firstName}} + "  " + {{owner.lastName}}
-  </li>
-  <button class="update" routerLink="/owner-update/{{owner.id}}">Update</button>
-  <button class="delete" (click)="delete(owner.id)">Delete</button>
-</div>
-</ul>
-<h3 *ngIf="!owners">Loading...</h3>
-<button routerLink="/owner-add">Add Owner</button>
+<div *ngIf="owners">
+    <div class="row" *ngFor="let owner of owners">
+      <div class="col s12">
+        <div class="card grey darken-4">
+          <div class="card-content white-text" routerLink="/owners/{{owner.id}}">
+            <span class="card-title">{{owner.name}}</span>
+            <p>{{owner.type}}</p>
+          </div>
+          <div class="card-action">
+            <a routerLink="/owner-update/{{owner.id}}">Update</a>
+            <a (click)="delete(owner.id)">Delete</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col s12">
+            <button class="waves-effect btn-floating btn-large waves-light add" routerLink="/owner-add">+</button>
+        </div>
+      </div>
+  </div>
+  
+  <div class="preloader-wrapper active loading big" *ngIf="!owners">
+    <div class="spinner-layer spinner-blue-only">
+      <div class="circle-clipper left">
+        <div class="circle"></div>
+      </div>
+      <div class="gap-patch">
+        <div class="circle"></div>
+      </div>
+      <div class="circle-clipper right">
+        <div class="circle"></div>
+      </div>
+    </div>
+  </div>

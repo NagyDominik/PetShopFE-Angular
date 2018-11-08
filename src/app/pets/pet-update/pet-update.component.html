@@ -1,42 +1,56 @@
 <form [formGroup]="petForm" (ngSubmit)="save()">
-  
-    <label>
-      Name:
-      <input type="text" formControlName="Name">
-    </label>
-  <br>
-  <br>
-    <label>
-      Type:
-      <input type="text" formControlName="Type">
-    </label>
-  <br>
-  <br>
-    <label>
-      Birth date:
-      <input type="date" formControlName="Birthdate">
-    </label>
-  <br>
-  <br>
-    <label>
-      Sold date:
-      <input type="date" formControlName="SoldDate">
-    </label>
-  <br>
-  <br>
-    <label>
-      Color:
-      <input type="text" formControlName="Color">
-    </label>
-  <br>
-  <br>
-    <label>
-      Price:
-      <input type="number" formControlName="Price">
-    </label>
-  <br>
-  <br>
-  <button type="submit">Save</button>
-  
-  </form>
-  <button routerLink="/pets">Back</button>
+  <div class="container">
+    <div class="row">
+      <div class="input-field col s6">
+        <label for="name">Name</label>
+        <input id="name" type="text" placeholder="" class="validate" formControlName="Name">
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="input-field col s6">
+        <label for="type">Type</label>
+        <input id="type" type="text" placeholder="" class="validate" formControlName="Type">
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col s6">
+        <label>Birth date</label>
+        <input type="date" formControlName="Birthdate">
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col s6">
+        <label>Sold date</label>
+        <input type="date" formControlName="SoldDate">
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="input-field col s6">
+        <label for="color">Color</label>
+        <input id="color" type="text" class="validate" placeholder="" formControlName="Color">
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="input-field col s6">
+        <label for="price">Price</label>
+        <input id="price" type="number" class="validate" placeholder="" formControlName="Price">
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <button type="submit" class="btn waves-effect waves-light">Save</button>
+  </div>
+</form>
+<div class="container">
+  <button routerLink="/pets" class="btn waves-effect waves-light grey darken-1">Back</button>
+</div>

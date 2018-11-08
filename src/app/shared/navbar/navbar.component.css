@@ -5,7 +5,7 @@
   
   .topnav {
     overflow: hidden;
-    background-color: #333;
+    background-color: #212121;
     border-radius: 10px;
     margin: 5px 5px;
   }
@@ -20,6 +20,6 @@
   }
   
   .topnav a:hover {
-    background-color: #4CAF50;
+    background-color: teal;
     color: white;
   }

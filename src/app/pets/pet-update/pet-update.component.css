@@ -2,16 +2,3 @@ form {
     padding-top: 30px;
     padding-bottom: 30px;
 }
-
-button {
-    border-radius: 4px;
-    background-color: #333;
-    border: none;
-    font-size: 14px;
-    padding: 8px 20px;
-    color: #f2f2f2;
-}
-
-[type="submit"] {
-    background-color: #4CAF50;
-}

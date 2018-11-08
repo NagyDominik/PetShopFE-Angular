@@ -8,13 +8,16 @@ import { PetAddComponent } from './pets/pet-add/pet-add.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PetUpdateComponent } from './pets/pet-update/pet-update.component';
 import { MzButtonModule, MzInputModule, MzDatepickerModule } from 'ngx-materialize';
+import { OwnersListComponent } from './owners/owners-list/owners-list.component';
 
 const routes: Routes = [
   { path: 'pets', component: PetsListComponent },
   { path: 'pets/:id', component: PetDetailComponent },
   { path: 'pet-add', component: PetAddComponent },
   { path: 'pet-update/:id', component: PetUpdateComponent },
-  { path: '', component: WelcomeComponent }
+  { path: '', component: WelcomeComponent },
+
+  { path: 'owners', component: OwnersListComponent },
 ];
 
 @NgModule({
