@@ -1,7 +1,7 @@
 .add {
   font-size: 24px;
   left: 45%;
-  top: 55%
+  top: 70%
 }
 
 .loading {
@@ -12,6 +12,8 @@
 
 .row {
   display: inline-flex;
+  min-width: 400px;
+  width: 30%;
 }
 
 a {
@@ -23,6 +25,8 @@ a {
   cursor: pointer;
 }
 
-.row {
-  width: 25%;
+.itemlist {
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 30px;
 }

@@ -1,0 +1,23 @@
+<div class="login grey lighten-3">
+    <br>
+    <div class="container">
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+            <div class="row">
+                <div class="input-field col s10 offset-s1">
+                    <label for="username">Username</label>
+                    <input id="username" type="text" class="validate" formControlName="Username">
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s10 offset-s1">
+                    <label for="password">Password</label>
+                    <input id="password" type="password" class="validate" formControlName="Password">
+                </div>
+            </div>
+        </form>
+        <div class="container center-align">
+            <button type="submit" class="btn waves-effect waves-light" (click)="login()">Login</button>
+        </div>
+        <br>
+    </div>
+</div>

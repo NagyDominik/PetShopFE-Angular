@@ -16,6 +16,7 @@ import { OwnerAddComponent } from './owners/owner-add/owner-add.component';
 import { OwnerDetailComponent } from './owners/owner-detail/owner-detail.component';
 import { OwnerUpdateComponent } from './owners/owner-update/owner-update.component';
 import { OwnersListComponent } from './owners/owners-list/owners-list.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { OwnersListComponent } from './owners/owners-list/owners-list.component'
     OwnerDetailComponent,
     OwnerUpdateComponent,
     OwnersListComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

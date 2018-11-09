@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Owner } from '../models/owner';
+import { AuthenticationService } from './authentication.service';
 
 @Injectable({
   providedIn: 'root'
@@ -9,11 +10,17 @@ import { Owner } from '../models/owner';
 export class OwnerService {
 
   apiURL = 'https://petshopapp-domi0766-easv.azurewebsites.net/api/owners';
+  httpOptions = { headers: new HttpHeaders({
+      'Content-Type':  'application/json',
+      'Authorization': 'token'
+    })};
 
-  constructor(private http: HttpClient) {  }
+  constructor(private http: HttpClient, private authenticationService: AuthenticationService) {  }
   
   getAll(): Observable<Owner[]> {
-    return this.http.get<Owner[]>(this.apiURL);
+    this.httpOptions.headers =
+      this.httpOptions.headers.set('Authorization', 'Bearer ' + this.authenticationService.getToken());
+    return this.http.get<Owner[]>(this.apiURL, this.httpOptions);
   }
 
   getOwnerByID(id: number): Observable<Owner> {

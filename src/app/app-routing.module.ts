@@ -9,8 +9,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { PetUpdateComponent } from './pets/pet-update/pet-update.component';
 import { MzButtonModule, MzInputModule, MzDatepickerModule } from 'ngx-materialize';
 import { OwnersListComponent } from './owners/owners-list/owners-list.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
+  { path: 'login', component: LoginComponent},
+
   { path: 'pets', component: PetsListComponent },
   { path: 'pets/:id', component: PetDetailComponent },
   { path: 'pet-add', component: PetAddComponent },
