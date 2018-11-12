@@ -1,3 +1,48 @@
-<p>
-  owner-add works!
-</p>
+<form [formGroup]="ownerForm" (ngSubmit)="save()">
+  <div class="container">
+    <div class="row">
+      <div class="input-field col s6">
+        <label for="fname">Firstname</label>
+        <input id="fname" type="text" class="validate" formControlName="FirstName">
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="input-field col s6">
+        <label for="lname">LastName</label>
+        <input id="lname" type="text" class="validate" formControlName="LastName">
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="input-field col s6">
+        <label for="address">Address</label>
+        <input id="address" type="text" class="validate" formControlName="Address">
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="input-field col s6">
+        <label for="phonenum">Phone number</label>
+        <input id="phonenum" type="text" class="validate" formControlName="PhoneNumber">
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="input-field col s6">
+        <label for="email">Email</label>
+        <input id="email" type="text" class="validate" formControlName="Email">
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <button type="submit" class="btn waves-effect waves-light">Save</button>
+  </div>
+</form>
+<div class="container">
+  <button routerLink="/owners" class="btn waves-effect waves-light grey darken-1">Back</button>
+</div>

@@ -1,3 +1,14 @@
-<p>
-  owner-detail works!
-</p>
+<h1>Owner Details</h1>
+<div *ngIf="owner">
+  <h2>{{owner.id}}. {{owner.firstName}}. {{owner.lastName}}</h2>
+  <h3>{{owner.address}}, {{owner.phoneNumber}}, {{owner.email}} DKK</h3>
+  <ul>
+    <li *ngFor="let pet of owner.pets">
+        <p>{{pet.id}}. {{pet.name}}</p>
+    </li>
+  </ul>
+</div>
+<div *ngIf="!owner">
+  <h2>Pet not found</h2>
+</div>
+<button routerLink="/owners">Back</button>

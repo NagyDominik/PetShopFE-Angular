@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Owner } from '../models/owner';
 import { AuthenticationService } from './authentication.service';
+import { jsonpCallbackContext } from '@angular/common/http/src/module';
 
 @Injectable({
   providedIn: 'root'
@@ -10,32 +11,40 @@ import { AuthenticationService } from './authentication.service';
 export class OwnerService {
 
   apiURL = 'https://petshopapp-domi0766-easv.azurewebsites.net/api/owners';
-  httpOptions = { headers: new HttpHeaders({
-      'Content-Type':  'application/json',
-      'Authorization': 'token'
-    })};
+  headers = new HttpHeaders({
+    'Content-Type':  'application/json',
+    'Authorization': 'token'
+  });
 
   constructor(private http: HttpClient, private authenticationService: AuthenticationService) {  }
   
   getAll(): Observable<Owner[]> {
-    this.httpOptions.headers =
-      this.httpOptions.headers.set('Authorization', 'Bearer ' + this.authenticationService.getToken());
-    return this.http.get<Owner[]>(this.apiURL, this.httpOptions);
+    this.headers =
+      this.headers.set('Authorization', 'Bearer ' + this.authenticationService.getToken());
+    return this.http.get<Owner[]>(this.apiURL, {headers: this.headers} );
   }
 
   getOwnerByID(id: number): Observable<Owner> {
-    return this.http.get<Owner>(this.apiURL + '/' + id);
+    this.headers =
+      this.headers.set('Authorization', 'Bearer ' + this.authenticationService.getToken());
+    return this.http.get<Owner>(this.apiURL + '/' + id, {headers: this.headers});
   }
 
   addOwner(owner: Owner): Observable<any> {
-    return this.http.post(this.apiURL, owner, {responseType: 'text'});
+    this.headers =
+      this.headers.set('Authorization', 'Bearer ' + this.authenticationService.getToken());
+    return this.http.post(this.apiURL, owner, {headers: this.headers, responseType: 'text'});
   }
 
   updateOwner(owner: Owner): Observable<any> {
-    return this.http.put(this.apiURL + '/' + owner.id, owner, {responseType: 'text'});
+    this.headers =
+      this.headers.set('Authorization', 'Bearer ' + this.authenticationService.getToken());
+    return this.http.put(this.apiURL + '/' + owner.id, owner, {headers: this.headers, responseType: 'text'});
   }
 
   deleteOwner(id: number): Observable<any> {
-    return this.http.delete(this.apiURL + '/' + id);
+    this.headers =
+      this.headers.set('Authorization', 'Bearer ' + this.authenticationService.getToken());
+    return this.http.delete(this.apiURL + '/' + id, {headers: this.headers, responseType: 'text'});
   }
 }

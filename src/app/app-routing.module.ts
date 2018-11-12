@@ -10,17 +10,25 @@ import { PetUpdateComponent } from './pets/pet-update/pet-update.component';
 import { MzButtonModule, MzInputModule, MzDatepickerModule } from 'ngx-materialize';
 import { OwnersListComponent } from './owners/owners-list/owners-list.component';
 import { LoginComponent } from './login/login.component';
+import { AuthGuard } from './shared/guard/auth.guard';
+import { OwnerDetailComponent } from './owners/owner-detail/owner-detail.component';
+import { OwnerAddComponent } from './owners/owner-add/owner-add.component';
+import { OwnerUpdateComponent } from './owners/owner-update/owner-update.component';
 
 const routes: Routes = [
+  { path: '', component: WelcomeComponent },
+
   { path: 'login', component: LoginComponent},
 
   { path: 'pets', component: PetsListComponent },
   { path: 'pets/:id', component: PetDetailComponent },
   { path: 'pet-add', component: PetAddComponent },
   { path: 'pet-update/:id', component: PetUpdateComponent },
-  { path: '', component: WelcomeComponent },
 
-  { path: 'owners', component: OwnersListComponent },
+  { path: 'owners', component: OwnersListComponent, canActivate: [AuthGuard] },
+  { path: 'owners/:id', component: OwnerDetailComponent, canActivate: [AuthGuard] },
+  { path: 'owner-add', component: OwnerAddComponent, canActivate: [AuthGuard] },
+  { path: 'owner-update/:id', component: OwnerUpdateComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({

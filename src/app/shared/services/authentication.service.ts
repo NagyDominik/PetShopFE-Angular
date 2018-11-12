@@ -8,6 +8,7 @@ import { map } from 'rxjs/operators';
 })
 export class AuthenticationService {
   apiURL = 'https://petshopapp-domi0766-easv.azurewebsites.net/';
+  redirectURL = '';
 
   constructor(private http: HttpClient) { }
 
