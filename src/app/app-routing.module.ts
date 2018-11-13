@@ -7,7 +7,6 @@ import { PetDetailComponent } from './pets/pet-detail/pet-detail.component';
 import { PetAddComponent } from './pets/pet-add/pet-add.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PetUpdateComponent } from './pets/pet-update/pet-update.component';
-import { MzButtonModule, MzInputModule, MzDatepickerModule } from 'ngx-materialize';
 import { OwnersListComponent } from './owners/owners-list/owners-list.component';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './shared/guard/auth.guard';
@@ -18,7 +17,7 @@ import { OwnerUpdateComponent } from './owners/owner-update/owner-update.compone
 const routes: Routes = [
   { path: '', component: WelcomeComponent },
 
-  { path: 'login', component: LoginComponent},
+  { path: 'login', component: LoginComponent },
 
   { path: 'pets', component: PetsListComponent },
   { path: 'pets/:id', component: PetDetailComponent },
@@ -36,12 +35,9 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forRoot(routes),
     ReactiveFormsModule,
-    MzButtonModule,
-    MzInputModule,
-    MzDatepickerModule,
   ],
   exports: [
-    RouterModule
+    RouterModule,
   ],
   declarations: []
 })

@@ -17,6 +17,8 @@ import { OwnerUpdateComponent } from './owners/owner-update/owner-update.compone
 import { OwnersListComponent } from './owners/owners-list/owners-list.component';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './shared/guard/auth.guard';
+import { MzButtonModule, MzInputModule, MzDatepickerModule } from 'ngx-materialize';
+
 
 @NgModule({
   declarations: [
@@ -39,6 +41,9 @@ import { AuthGuard } from './shared/guard/auth.guard';
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
+    MzDatepickerModule,
+    MzButtonModule,
+    MzInputModule
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]
