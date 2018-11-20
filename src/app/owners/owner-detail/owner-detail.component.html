@@ -1,14 +1,45 @@
-<h1>Owner Details</h1>
 <div *ngIf="owner">
-  <h2>{{owner.id}}. {{owner.firstName}}. {{owner.lastName}}</h2>
-  <h3>{{owner.address}}, {{owner.phoneNumber}}, {{owner.email}} DKK</h3>
-  <ul>
-    <li *ngFor="let pet of owner.pets">
-        <p>{{pet.id}}. {{pet.name}}</p>
-    </li>
-  </ul>
-</div>
-<div *ngIf="!owner">
-  <h2>Pet not found</h2>
-</div>
-<button routerLink="/owners">Back</button>
+    <div class="container">
+      <div class="card grey lighten-4">
+        <div class="card-content">
+          <span class="card-title">
+            <h2>Owner Details</h2>
+          </span>
+          <table>
+            <tr>
+              <td>
+                <h5><b>Name: </b>{{owner.firstName}} {{owner.lastName}}</h5>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h5><b>Address: </b>{{owner.address}}</h5>
+              </td>
+              <td>
+                <h5><b>Phone number: </b>{{owner.phoneNumber}}</h5>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h5><b>Email: </b><br>{{owner.email}}</h5>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <h5 class="list"><b>Pets: </b>
+                <ul class="list">
+                  <li *ngFor="let pet of owner.pets">
+                    <i mz-icon [icon]="'pets'"></i> {{pet.name}}, {{pet.type}}
+                  </li>
+                </ul>
+              </h5>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <button routerLink="/owners" class="btn waves-effect waves-light grey darken-1">Back</button>
+    </div>
+    <div *ngIf="!owner">
+      <h2>Owner not found</h2>
+    </div>

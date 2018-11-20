@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiUrl: 'https://petshopapp-domi0766-easv.azurewebsites.net/api'
 };
 
 /*
