@@ -22,8 +22,10 @@ export class PetsListComponent implements OnInit {
   }
 
   delete(id: number) {
-    this.petService.deletePet(id).subscribe(message => {console.log(message)});
-    this.refresh();
+    this.petService.deletePet(id).subscribe(message => {
+      console.log(message);
+      this.refresh();
+    });
   }
 
 }

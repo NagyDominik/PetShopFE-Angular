@@ -21,8 +21,8 @@ const routes: Routes = [
 
   { path: 'pets', component: PetsListComponent },
   { path: 'pets/:id', component: PetDetailComponent },
-  { path: 'pet-add', component: PetAddComponent },
-  { path: 'pet-update/:id', component: PetUpdateComponent },
+  { path: 'pet-add', component: PetAddComponent, canActivate: [AuthGuard] },
+  { path: 'pet-update/:id', component: PetUpdateComponent, canActivate: [AuthGuard] },
 
   { path: 'owners', component: OwnersListComponent, canActivate: [AuthGuard] },
   { path: 'owners/:id', component: OwnerDetailComponent, canActivate: [AuthGuard] },

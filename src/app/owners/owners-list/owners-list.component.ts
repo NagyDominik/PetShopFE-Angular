@@ -22,8 +22,9 @@ export class OwnersListComponent implements OnInit {
   }
 
   delete(id: number) {
-    this.ownerService.deleteOwner(id).subscribe(message => {console.log(message)});
-    this.refresh();
+    this.ownerService.deleteOwner(id).subscribe(message => {
+      console.log(message); this.refresh();
+    });
   }
 
 }

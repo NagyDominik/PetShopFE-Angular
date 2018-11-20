@@ -40,6 +40,6 @@ export class PetService {
   }
 
   deletePet(id: number): Observable<any> {
-    return this.http.delete(this.apiURL + '/' + id);
+    return this.http.delete(this.apiURL + '/' + id, {responseType: 'text'});
   }
 }

@@ -1,43 +1,59 @@
-<form [formGroup]="petForm" (ngSubmit)="save()" class="s10 offset-s1">
+<form [formGroup]="petForm" class="s10 offset-s1">
+
   <div class="row">
     <div class="input-field col s6">
       <label for="name" class="active">Name</label>
       <input id="name" type="text" placeholder="" class="validate" formControlName="Name">
     </div>
   </div>
+
   <div class="row">
     <div class="input-field col s6">
       <label for="type" class="active">Type</label>
       <input id="type" type="text" placeholder="" class="validate" formControlName="Type">
     </div>
   </div>
+
   <div class="row">
-    <div class="col s6">
+    <div class="input-field col s6">
       <label class="active">Birth date</label>
       <input type="date" mz-datepicker formControlName="Birthdate">
     </div>
   </div>
+
   <div class="row">
-    <div class="col s6">
+    <div class="input-field col s6">
       <label class="active">Sold date</label>
       <input type="date" mz-datepicker formControlName="SoldDate">
     </div>
   </div>
+
+  <div class="row">
+    <div class="input-field col s6">
+      <select mz-select id="owner" [placeholder]="'Owner'" formControlName="PreviousOwner">
+        <option *ngFor="let owner of owners" [ngValue]="owner.id">{{owner.firstName}} {{owner.lastName}}</option>
+      </select>
+    </div>
+  </div>
+
   <div class="row">
     <div class="input-field col s6">
       <label for="color" class="active">Color</label>
       <input id="color" type="text" class="validate" placeholder="" formControlName="Color">
     </div>
   </div>
+
   <div class="row">
     <div class="input-field col s6">
       <label for="price" class="active">Price</label>
       <input id="price" type="number" class="validate" placeholder="" formControlName="Price">
     </div>
   </div>
+
 </form>
+
 <div class="container">
-  <button type="submit" class="btn waves-effect waves-light">Save</button>
+  <button (click)="save()" class="btn waves-effect waves-light">Save</button>
 </div>
 <div class="container">
   <button routerLink="/pets" class="btn waves-effect waves-light grey darken-1">Back</button>
